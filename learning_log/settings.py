@@ -11,10 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY=os.environ.get('SECRET_KEY')
+SECRET_KEY='n1ynuzzbb7(ml5x$ggz6tg3)1b8x0t!t9m=7!zb#2($@=c+&&2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -86,10 +82,8 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        #NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': os.environ.get('DB_NAME'), #here
-        'USER': os.environ.get('DB_USER'), #here
-        'PASSWORD': os.environ.get('DB_PASS'), #here
+        'NAME': BASE_DIR / 'db.sqlite3',
+
     }
 }
 
